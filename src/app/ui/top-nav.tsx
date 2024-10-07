@@ -11,7 +11,7 @@ export default function TopNav() {
   const links = [
 	{ name: 'Home', href: '/'},
 	{ name: 'Music', href: '/music/'},
-	{ name: 'Submit Music', href: '/submit-music/'},
+	// { name: 'Submit Music', href: '/submit-music/'},
 	{ name: 'YouTube Submission', href: '/youtube-submission/'},
 	{ name: 'Blog', href: '/blog/'},
 ];
