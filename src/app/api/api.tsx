@@ -1,4 +1,4 @@
-const API_URL = 'https://followthislight.com/graphql';
+const API_URL = process.env.GRAPHQL_ENDPOINT;
 
 export async function fetchAPI(
 	query = "",
