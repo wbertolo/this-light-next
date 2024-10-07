@@ -1,8 +1,8 @@
-import { authenticate } from '../components/authenticate';
+// import { authenticate } from '../components/authenticate';
 
 export default async function Page() {
 
-	authenticate();
+	// authenticate();
 
 	return (
 		<>
