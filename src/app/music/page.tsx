@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 const getReleases = async () => {
 	try {
-		const res = await fetch(`https://followthislight.com/wp-json/thislight/v1/releases`);
+		const res = await fetch(`${process.env.WP_API}/releases`);
 		const data = await res.json();
 		return data;
 	} catch (err) {
@@ -17,14 +17,13 @@ const getReleases = async () => {
 
 };
 
-export default async function Page() {
+export default async function Music() {
 
 	const releases = await getReleases();
 	
 	return (
 		<>
 			<h1>Music</h1>
-
 			<ul className="flex justify-center list-none mb-7">
 				<li className="px-2">
 					<a href="https://open.spotify.com/artist/2oJYxQHQ1bnyGpXDQGxu6i?si=ycrnFCIaS_iuprfQtP2OTQ" target="_blank" rel="noopener noreferrer">

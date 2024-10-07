@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${lato.className} antialiased bg-black text-white`} suppressHydrationWarning={true}>
+      <body className={`${lato.className} antialiased bg-black text-white`}>
         <div className="max-w-[960px] mx-auto text-left pb-10">
           <Header />
           <main className="flex flex-col px-4 m:p-0">

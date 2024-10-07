@@ -16,7 +16,7 @@ export default function YouTubeSubmission() {
 		
 		try {
 			const res = await fetch(
-				`https://followthislight.com/wp-json/thislight/v1/submityt?url=${formData.get("video_url")}`, {
+				`${process.env.WP_API}/submityt?url=${formData.get("video_url")}`, {
 					method: 'GET',
 					headers: {
 						'Content-Type': 'application/json',
