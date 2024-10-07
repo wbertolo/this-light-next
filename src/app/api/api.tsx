@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000/graphql';
+const API_URL = 'https://followthislight.com/graphql';
 
 export async function fetchAPI(
 	query = "",

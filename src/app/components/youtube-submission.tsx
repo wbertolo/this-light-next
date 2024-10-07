@@ -16,7 +16,7 @@ export default function YouTubeSubmission() {
 		
 		try {
 			const res = await fetch(
-				`http://localhost:8080/wp-json/thislight/v1/submityt?url=${formData.get("video_url")}`, {
+				`https://followthislight.com/wp-json/thislight/v1/submityt?url=${formData.get("video_url")}`, {
 					method: 'GET',
 					headers: {
 						'Content-Type': 'application/json',
