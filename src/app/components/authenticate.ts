@@ -24,10 +24,10 @@ export async function authenticate() {
 			}
 		
 			const base64encode = (input:any) => {
-				return btoa(String.fromCharCode(...new Uint8Array(input)))
-					.replace(/=/g, '')
-					.replace(/\+/g, '-')
-					.replace(/\//g, '_');
+				// return btoa(String.fromCharCode(...new Uint8Array(input)))
+				// 	.replace(/=/g, '')
+				// 	.replace(/\+/g, '-')
+				// 	.replace(/\//g, '_');
 			}
 			
 			
@@ -56,8 +56,8 @@ export async function authenticate() {
 			}
 	
 			if (typeof window !== "undefined") {
-				authUrl.search = new URLSearchParams(params).toString();
-				window.location.href = authUrl.toString();
+				// authUrl.search = new URLSearchParams(params).toString();
+				// window.location.href = authUrl.toString();
 			}
 	
 		} else {
