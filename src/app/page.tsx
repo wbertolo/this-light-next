@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getPageBySlug } from './api/api';
 import Card from './ui/card';
+import Ad from './ui/ad';
 
 export const metadata: Metadata = {
   title: 'Home | This Light',
@@ -26,6 +27,8 @@ export default async function Home() {
 					alt="Discover This Light on Spotify"
 				/>
 			</Link>
+
+			{/* <Ad /> */}
 
 			{/* Tiles R1 */}
 			<div className="tiles flex flex-col lg:flex-row justify-between">
