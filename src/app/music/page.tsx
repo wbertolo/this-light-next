@@ -6,21 +6,11 @@ export const metadata: Metadata = {
 	description: 'This Light\'s music releases on all streaming platforms: Spotify, Deezer, Apple, Amazon Music, Google Play, and YouTube.',
 }
 
-const getReleases = async () => {
-	try {
-		const res = await fetch(`${process.env.WP_API}/releases`);
-		const data = await res.json();
-		return data;
-	} catch (err) {
-		console.log(err);
-	}
-
-};
-
 export default async function Music() {
 
-	const releases = await getReleases();
-	
+	const res = await fetch(`${process.env.WP_API}/releases`);
+	const releases = await res.json();
+
 	return (
 		<>
 			<h1>Music</h1>
