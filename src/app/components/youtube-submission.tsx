@@ -24,6 +24,7 @@ export default function YouTubeSubmission() {
 				}
 				);
 				const data = await res.json();
+				console.log(data);
 				setLoading(false);
 				setTyMessage(`Your YouTube video was submitted. Check my Youtube channel in a few days.`);
 			return data;
