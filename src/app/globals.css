@@ -3,41 +3,77 @@
 @tailwind utilities;
 
 @layer base {
-  main {
-    h1 {
-      @apply text-xl md:text-2xl font-bold mb-4;
-    }
-    h2 {
-      @apply text-lg md:text-xl font-bold text-purple-light mb-3 mt-9;
+	.main {
+		.screen-reader-text {
+			@apply hidden;
+		}
+		.topnav {
+			@apply flex flex-col md:flex-row items-center m-0;
+		}
+		.topnav li {
+			@apply list-none;
+		}
+		.topnav li a {
+			@apply inline-block mx-4 py-1 text-white text-center font-bold text-base md:text-lg lg:text-2xl no-underline;
+		}
+		.topnav li.current-menu-item a {
+			@apply border-b-[3px] border-purple-light;
+		}
+		h1 {
+			@apply text-xl md:text-2xl font-bold mb-4 text-center md:text-left;
+		}
+		h2 {
+			@apply text-lg md:text-xl font-bold text-purple-light mb-3 mt-9;
 
-      a {
-        @apply text-white no-underline;
-      }
-    }
-    .tiles a,
-    .tiles h2 {
-      @apply text-white no-underline;
-    }
-    h3 {
-      @apply text-base md:text-lg font-bold mb-2 mt-7;
-    }
-    a {
-      @apply underline text-blue-light;
-    }
-    p {
-      @apply mb-3;
-    }
-    ul {
-      @apply list-disc ml-4;
-    }
-    .post img {
-      @apply mb-10;
-    }
-    .post h2, .post h3 {
-      @apply text-black;
-    }
-    .post-card h2, .post-card h3 {
-      @apply text-white;
-    }
-  }
+			a {
+				@apply text-white no-underline;
+			}
+		}
+		h3 {
+			@apply text-base md:text-lg font-bold mb-2 mt-7;
+		}
+		.cta,
+		.pagination a,
+		.page-numbers.current,
+		.form-submit input {
+			@apply inline-block py-3 px-4 uppercase font-bold text-white bg-purple-medium border border-white no-underline hover:!bg-white hover:text-black hover:border-black transition-shadow duration-500 hover:shadow-[0_0_30px_5px_rgba(102,34,159,1)] hover:shadow-purple-medium;
+		}
+		.page-numbers.current {
+			@apply opacity-50;
+		}
+		.tiles a,
+		.tiles h2 {
+			@apply text-white no-underline mt-0 mb-3;
+		}
+		.tiles .cta {
+			@apply shadow-none;
+		}
+		a {
+			@apply underline text-blue-light;
+		}
+		p {
+			@apply mb-3;
+		}
+		ul {
+			@apply list-disc ml-4;
+		}
+		.post img {
+			@apply mb-10;
+		}
+		.post h2, .post h3, .post a {
+			@apply text-black;
+		}
+		.post-card h2, .post-card h3 {
+			@apply text-white;
+		}
+		.page-numbers.dots {
+			@apply mx-5;
+		}
+		.pagination {
+			@apply text-center;
+		}
+		.comment-form textarea {
+			@apply w-full;
+		}
+	}
 }

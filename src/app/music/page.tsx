@@ -14,7 +14,7 @@ export default async function Music() {
 	return (
 		<>
 			<h1>Music</h1>
-			<ul className="flex justify-center list-none mb-7">
+			<ul className="flex justify-center !list-none mb-7">
 				<li className="px-2">
 					<a href="https://open.spotify.com/artist/2oJYxQHQ1bnyGpXDQGxu6i?si=ycrnFCIaS_iuprfQtP2OTQ" target="_blank" rel="noopener noreferrer">
 					<Image
