@@ -14,7 +14,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
 		<div class="post-card bg-blue-dark text-white p-4 mb-10 overflow-hidden border border-slate-500">
 			<h2 class="text-white mt-0"><a href="${post.uri}">${post.title}</a></h2>
 			<img src="${post.featuredImage.node.sourceUrl}" />
-			<p><a class="no-underline text-white" href="${post.uri}">${post.excerpt}</a></p>
+			<p><a class="!no-underline !text-white" href="${post.uri}">${post.excerpt}</a></p>
 		</div>
 		`
 	).join(" ");

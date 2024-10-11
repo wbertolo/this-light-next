@@ -32,10 +32,10 @@ export default function Card(params:any) {
 		classShadowColour = 'hover:shadow-blue-medium';
 	}
 	if (params.basisPercentage === 'small') {
-		classBasis = 'basis-[34%]';
+		classBasis = 'basis-[44%]';
 	}
 	if (params.basisPercentage === 'large') {
-		classBasis = 'basis-[64%]';
+		classBasis = 'basis-[54%]';
 	}
 	return (
 		<div 

@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={`${lato.className} antialiased bg-black text-white`}>
         <div className="max-w-[960px] mx-auto text-left pb-10">
           <Header />
-          <main className="flex flex-col px-4 m:p-0">
+          <main className="main flex flex-col px-4 m:p-0">
             {children}
           </main>
         </div>
