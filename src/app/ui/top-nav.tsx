@@ -12,7 +12,7 @@ export default function TopNav() {
 	{ name: 'Home', href: '/'},
 	{ name: 'Music', href: '/music/'},
 	// { name: 'Submit Music', href: '/submit-music/'},
-	{ name: 'YouTube Submission', href: '/youtube-submission/'},
+	// { name: 'YouTube Submission', href: '/youtube-submission/'},
 	{ name: 'Blog', href: '/blog/'},
 ];
 
