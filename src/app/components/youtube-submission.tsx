@@ -1,7 +1,8 @@
 'use client';
 import Button from '../ui/button';
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import Loading from '../ui/loading';
+import { sendEmail } from "@netlify/emails";
 
 export default function YouTubeSubmission() {
 	
@@ -13,21 +14,33 @@ export default function YouTubeSubmission() {
 	}
 
     const handleSubmit = async (formData: any) => {
-		
+		console.log(formData);
 		try {
-			const res = await fetch(
-				`${process.env.WP_API}/submityt?url=${formData.get("video_url")}`, {
-					method: 'GET',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-				}
-				);
-				const data = await res.json();
-				console.log(data);
-				setLoading(false);
-				setTyMessage(`Your YouTube video was submitted. Check my Youtube channel in a few days.`);
-			return data;
+			// const res = await fetch(
+			// 	`${process.env.WP_API}/submityt?url=${formData.get("video_url")}`, {
+			// 		method: 'GET',
+			// 		headers: {
+			// 			'Content-Type': 'application/json',
+			// 		},
+			// 	}
+			// 	);
+			// 	const data = await res.json();
+
+			await sendEmail({
+				from: "loftmusic.ca@gmail.com",
+				to: "loftmusic.ca@gmail.com",
+				subject: "YouTube submission",
+				template: "subscribed",
+				parameters: {
+					// url: `${formData.get("video_url")}`
+					url: 'test'
+				},
+			});
+
+			// console.log(data);
+			setLoading(false);
+			setTyMessage(`Your YouTube video was submitted. Check my Youtube channel in a few days.`);
+			// return data;
 		} catch (err) {
 			console.log(err);
 		}
