@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/emails": "^1.1.0",
     "@netlify/functions": "^2.8.2",
     "classnames": "^2.5.1",
     "clsx": "^2.1.0",
     "next": "^14.1.4",
-    "node-fetch": "^3.3.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "url": "^0.11.4"
   },
   "devDependencies": {
     "@types/node": "^20",
