@@ -1,12 +1,10 @@
-const API_URL = process.env.GRAPHQL_ENDPOINT;
-
 export async function fetchAPI(
 	query = "",
 	{ variables }: Record<string, any> = {}
   ) {
 	const headers = { "Content-Type": "application/json" };
   
-	const res = await fetch(API_URL, {
+	const res = await fetch(process.env.GRAPHQL_ENDPOINT, {
 	  headers,
 	  method: "POST",
 	  body: JSON.stringify({

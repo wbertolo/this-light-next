@@ -2,7 +2,6 @@
 import Button from '../ui/button';
 import { useState } from 'react';
 import Loading from '../ui/loading';
-import { sendEmail } from "@netlify/emails";
 
 export default function YouTubeSubmission() {
 	
@@ -13,38 +12,51 @@ export default function YouTubeSubmission() {
 		setLoading(true);
 	}
 
-    const handleSubmit = async (formData: any) => {
-		console.log(formData);
-		try {
-			// const res = await fetch(
-			// 	`${process.env.WP_API}/submityt?url=${formData.get("video_url")}`, {
-			// 		method: 'GET',
-			// 		headers: {
-			// 			'Content-Type': 'application/json',
-			// 		},
-			// 	}
-			// 	);
-			// 	const data = await res.json();
+	const submitData = async (formData: any) => {
 
-			await sendEmail({
-				from: "loftmusic.ca@gmail.com",
-				to: "loftmusic.ca@gmail.com",
-				subject: "YouTube submission",
-				template: "subscribed",
-				parameters: {
-					// url: `${formData.get("video_url")}`
-					url: 'test'
-				},
-			});
-
-			// console.log(data);
-			setLoading(false);
-			setTyMessage(`Your YouTube video was submitted. Check my Youtube channel in a few days.`);
-			// return data;
-		} catch (err) {
-			console.log(err);
+		if(formData.get("video_url") === null || formData.get("video_url") === '') {
+			return {
+				statusCode: 400,
+				body: JSON.stringify("Payload required"),
+			};
 		}
 
+		try {
+			await fetch(
+				`${process.env.SITE_URL}/.netlify/functions/emails/subscribed`,
+				{
+				  headers: {
+					"netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+				  },
+				  method: "POST",
+				  body: JSON.stringify({
+					from: "loftmusic.ca@gmail.com",
+					to: "loftmusic.ca@gmail.com",
+					subject: "YouTube submission",
+					template: "subscribed",
+					parameters: {
+						url: `${formData.get("video_url")}`
+					},
+				  }),
+				}
+			);
+
+			setLoading(false);
+			setTyMessage(`Your YouTube video was submitted. Check my Youtube channel in a few days.`);
+
+			return {
+				statusCode: 200,
+				body: JSON.stringify("Subscribe email sent!"),
+			};
+
+		} catch (err) {
+			console.log(err);
+		}		
+
+	}
+    const handleSubmit = async (formData: any) => {
+		const submission = await submitData(formData);
+		console.log(submission);
     }
 
 	return (
