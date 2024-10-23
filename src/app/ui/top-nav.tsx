@@ -3,15 +3,13 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
  
-// ...
- 
 export default function TopNav() {
   const pathname = usePathname();
  
   const links = [
 	{ name: 'Home', href: '/'},
 	{ name: 'Music', href: '/music/'},
-	// { name: 'Submit Music', href: '/submit-music/'},
+	{ name: 'Submit Music', href: '/submit-music/'},
 	{ name: 'YouTube Submission', href: '/youtube-submission/'},
 	{ name: 'Blog', href: '/blog/'},
 ];
